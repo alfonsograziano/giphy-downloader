@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Giphy Video Downloader",
+  "version": "1.0",
+  "permissions": ["activeTab", "storage", "downloads"],
+  "action": {
+    "default_icon": {
+      "16": "icons/icon_colored.png"
+    },
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.giphy.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "16": "icons/icon_colored.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
